@@ -816,39 +816,37 @@ function Header()
 }
 
 function Inputs()
-{   return(
+{   const [MemeImage,setMemeImage]=React.useState("");   
+    function getMemeImage()
+    {   const memes=image.data.memes;
+        const randomnumber=Math.floor(Math.random()*memes.length);
+        setMemeImage(memes[randomnumber].url);
+    }
+
+    return(
         <div id="main-content">
             <div id="main-input-content">
                 <div id="top-things">
-                    <label for="top-box" id="top-text">Top Text</label>
+                    <label htmlFor="top-box" id="top-text">Top Text</label>
                     <input id="top-box" type="text" placeholder="Top Text"></input>
                 </div>
                 <div id="bottom-things">
-                    <label for="bottom-box" id="bottom-text">Bottom Text</label>
+                    <label htmlFor="bottom-box" id="bottom-text">Bottom Text</label>
                     <input id="bottom-box" type="text" placeholder="Bottom Text"></input>
                 </div>
             </div>
-            <button id="btn-img" onClick={Click}>Click here to Get a Meme Image.</button>
+            <button id="btn-img" onClick={getMemeImage}>Click here to Get a Meme Image.</button>
+            <div id="element">
+            <img src={MemeImage} className="Image-generate"></img>
+            </div>
         </div>
     );
 }
-
-function Click()
-{   let memes=image.data.memes;
-    let randomnumber=Math.floor(Math.random()*memes.length);
-    return(
-        <div id="picture">
-            <img src={memes[randomnumber].url} id="main-img"></img>
-        </div>
-    );
-}
-
 function Page()
 {   return(
         <div>
             <Header />
-            <Inputs />
-            <Click />
+            <Inputs />      
         </div>
     );
 }

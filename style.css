@@ -54,17 +54,14 @@ body{
 {       
     background: linear-gradient(90deg, #67228097 1.18%, #a526d393 100%);
 }
-#picture
-{   
-    margin-left:30%;
-    border-color:black;
-    border-width:20px;
+.Image-generate
+{   height:400px;
+    width:400px; 
     margin-top:20px;
-
-}
-#main-img
-{   width:500px;
-    height:500px;
-    background-size:contain;
 }
 
+#element
+{   display:flex;
+    align-items:center;
+    justify-content:center;
+}
