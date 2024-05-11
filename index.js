@@ -837,7 +837,7 @@ function Inputs()
             </div>
             <button id="btn-img" onClick={getMemeImage}>Click here to Get a Meme Image.</button>
             <div id="element">
-            <img src={MemeImage} className="Image-generate"></img>
+            <img src={MemeImage} className="Image-generate" alt=" "></img>
             </div>
         </div>
     );
