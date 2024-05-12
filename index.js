@@ -816,11 +816,23 @@ function Header()
 }
 
 function Inputs()
-{   const [MemeImage,setMemeImage]=React.useState("");   
+{  const [meme,setMeme]=React.useState({
+    toptext:"",
+    bottomtext:"",
+    randomimage:"defaultimage.png"
+})
+    const [MemeImage,setMemeImage]=React.useState("defaultimage.png");   
     function getMemeImage()
     {   const memes=image.data.memes;
         const randomnumber=Math.floor(Math.random()*memes.length);
-        setMemeImage(memes[randomnumber].url);
+        let url=(memes[randomnumber].url);
+        setMeme(prev=>{
+            return(
+                {   ...prev,
+                    randomimage:url
+                }
+            )
+        });
     }
 
     return(
@@ -837,7 +849,7 @@ function Inputs()
             </div>
             <button id="btn-img" onClick={getMemeImage}>Click here to Get a Meme Image.</button>
             <div id="element">
-            <img src={MemeImage} className="Image-generate" alt=" "></img>
+            <img src={meme.randomimage} className="Image-generate" alt=" "></img>
             </div>
         </div>
     );
