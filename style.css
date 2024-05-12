@@ -58,10 +58,24 @@ body{
 {   height:400px;
     width:400px; 
     margin-top:20px;
+
 }
 
 #element
 {   display:flex;
     align-items:center;
     justify-content:center;
+}
+#border
+{   height:440px;
+    width:440px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-width:10px;
+    border-color:black;
+    border-style:solid;
+    margin-top:20px;
+    padding:3px;
+
 }
