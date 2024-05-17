@@ -58,7 +58,6 @@ body{
 {   height:400px;
     width:400px; 
     margin-top:20px;
-
 }
 
 #element
@@ -77,5 +76,23 @@ body{
     border-style:solid;
     margin-top:20px;
     padding:3px;
+    position:relative;
 
+}
+#top,#bottom
+{   position:absolute;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px); 
+}
+#top
+{   margin-top:-70%;
+    color:black;
+    font-weight:bold;
+    font-size:3em;
+}
+#bottom
+{   margin-top:76%;
+    color:black;
+    font-weight:bold;
+    font-size:3em;
 }
